@@ -1,0 +1,88 @@
+The extension for FrontBase access version 0.5.2
+
+      By Cail Borrell (cail@frontbase.com)
+
+- What's this ?
+
+This is the extension library to access a FrontBase database from Ruby.
+
+- Requirements
+
+  Ruby 1.3.4 or later.
+  FrontBase 3.x installed.
+
+- How to install ?
+
+Follow the instructions below to compile and install:
+
+  ruby extconf.rb
+  make
+  su              (if necessary)
+  make install
+
+- How to use ?
+
+You need to specify:
+
+  require "frontbase"
+
+at the top of your script.
+
+- What functions can I use ?
+
+The list of supported functions are below.
+
+class FBSQL_Connect:
+
+ class methods:
+    new
+    connect
+    setdb
+    setdblogin
+
+ methods:
+    db
+    host
+    user
+
+    database_server_info
+    autocommit
+    ping
+    commit
+    rollback
+    status
+    error
+
+    exec
+    query
+    close
+    finish
+
+    create_blob
+    create_clob
+
+class FBSQL_Result:
+
+ methods:
+    status
+    result
+    each
+    []
+    columns
+    num_rows
+    num_cols
+    column_name
+    column_type
+    column_length
+    column_precision
+    column_scale
+    column_isnullable
+    clear
+    close
+   
+class FBSQL_LOB:
+
+ methods:
+    read
+    handle
+    size
